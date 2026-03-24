@@ -4,14 +4,11 @@ from ring2book_roi.calculator import (
     calculate_missed_calls_per_month,
     calculate_roi_summary,
 )
-from ring2book_roi.models import RoiScenarioInput
+from ring2book_roi.presets import load_scenario_from_json
 
 
 def load_scenario():
-    with open("scenarios/plumber_base.json", "r") as file:
-        data = json.load(file)
-    return RoiScenarioInput(**data)
-
+    return load_scenario_from_json("scenarios/plumber_base.json")
 
 def test_calculate_missed_calls_per_month():
     scenario = load_scenario()
