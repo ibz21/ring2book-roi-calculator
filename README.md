@@ -68,3 +68,9 @@ ring2book-roi-calculator/
 │   └── test_calculator.py
 └── assets/
 
+## Run from the command line
+
+From the project root, run:
+
+```powershell
+$env:PYTHONPATH="src"; python -m ring2book_roi.cli scenarios/plumber_base.json
