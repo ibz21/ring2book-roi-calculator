@@ -1,0 +1,18 @@
+{
+  "business_name": "Example Plumbing Co",
+  "trade_type": "Plumbing",
+  "monthly_inbound_calls": 120,
+  "missed_call_rate": 0.30,
+  "average_job_value": 110.0,
+  "current_recovery_rate": 0.20,
+  "current_booking_rate": 0.60,
+  "current_completion_rate": 0.85,
+  "assisted_contact_rate": 0.95,
+  "assisted_engagement_rate": 0.55,
+  "assisted_qualification_rate": 0.85,
+  "assisted_booking_rate": 0.70,
+  "assisted_completion_rate": 0.90,
+  "monthly_plan_cost": 199.0,
+  "setup_fee": 790.0,
+  "setup_amortisation_months": 6
+}
