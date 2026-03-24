@@ -40,3 +40,18 @@ def test_load_electrician_scenario():
     assert scenario.trade_type == "Electrical"
     assert scenario.monthly_inbound_calls == 90
     assert scenario.missed_call_rate == 0.25
+
+def test_calculate_electrician_roi_summary():
+    scenario = load_scenario_from_json("scenarios/electrician_base.json")
+    summary = calculate_roi_summary(scenario)
+
+    assert summary["missed_calls_per_month"] == 22.5
+    assert summary["baseline_completed_jobs"] == 1.96
+    assert summary["baseline_revenue"] == 274.43
+    assert summary["assisted_completed_jobs"] == 5.423
+    assert summary["assisted_revenue"] == 759.22
+    assert summary["incremental_revenue"] == 484.79
+    assert summary["monthly_cost"] == 330.67
+    assert summary["net_monthly_gain"] == 154.13
+    assert summary["roi_multiple"] == 1.47
+    assert summary["setup_payback_months"] == 5.13
