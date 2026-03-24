@@ -10,6 +10,7 @@ from ring2book_roi.presets import load_scenario_from_json
 def load_scenario():
     return load_scenario_from_json("scenarios/plumber_base.json")
 
+
 def test_calculate_missed_calls_per_month():
     scenario = load_scenario()
     result = calculate_missed_calls_per_month(scenario)
@@ -30,3 +31,12 @@ def test_calculate_roi_summary():
     assert summary["net_monthly_gain"] == 373.42
     assert summary["roi_multiple"] == 2.13
     assert summary["setup_payback_months"] == 2.12
+
+
+def test_load_electrician_scenario():
+    scenario = load_scenario_from_json("scenarios/electrician_base.json")
+
+    assert scenario.business_name == "Example Electrical Co"
+    assert scenario.trade_type == "Electrical"
+    assert scenario.monthly_inbound_calls == 90
+    assert scenario.missed_call_rate == 0.25

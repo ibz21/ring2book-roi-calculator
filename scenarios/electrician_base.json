@@ -1,0 +1,18 @@
+{
+  "business_name": "Example Electrical Co",
+  "trade_type": "Electrical",
+  "monthly_inbound_calls": 90,
+  "missed_call_rate": 0.25,
+  "average_job_value": 140.0,
+  "current_recovery_rate": 0.18,
+  "current_booking_rate": 0.55,
+  "current_completion_rate": 0.88,
+  "assisted_contact_rate": 0.95,
+  "assisted_engagement_rate": 0.5,
+  "assisted_qualification_rate": 0.82,
+  "assisted_booking_rate": 0.68,
+  "assisted_completion_rate": 0.91,
+  "monthly_plan_cost": 199.0,
+  "setup_fee": 790.0,
+  "setup_amortisation_months": 6
+}
