@@ -35,6 +35,7 @@ Version 1 models:
 - monthly revenue recovery
 - ROI multiple
 - setup payback period
+- multiple reusable scenario files for different trade types
 
 ## Planned build stages
 
@@ -66,3 +67,4 @@ ring2book-roi-calculator/
 ├── tests/
 │   └── test_calculator.py
 └── assets/
+
