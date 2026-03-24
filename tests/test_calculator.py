@@ -1,5 +1,4 @@
 import json
-import pytest
 
 from ring2book_roi.calculator import (
     calculate_missed_calls_per_month,
@@ -27,10 +26,10 @@ def test_calculate_roi_summary():
     assert summary["missed_calls_per_month"] == 36.0
     assert summary["baseline_completed_jobs"] == 3.672
     assert summary["baseline_revenue"] == 403.92
-    assert summary["assisted_completed_jobs"] == 10.072754999999999
-    assert summary["assisted_revenue"] == 1108.0030499999998
-    assert summary["incremental_revenue"] == pytest.approx(704.0830499999998)
-    assert summary["monthly_cost"] == 330.66666666666663
-    assert summary["net_monthly_gain"] == pytest.approx(373.4163833333332)
-    assert summary["roi_multiple"] == 2.129283417338709
-    assert summary["setup_payback_months"] == 2.115600801839485
+    assert summary["assisted_completed_jobs"] == 10.073
+    assert summary["assisted_revenue"] == 1108.0
+    assert summary["incremental_revenue"] == 704.08
+    assert summary["monthly_cost"] == 330.67
+    assert summary["net_monthly_gain"] == 373.42
+    assert summary["roi_multiple"] == 2.13
+    assert summary["setup_payback_months"] == 2.12

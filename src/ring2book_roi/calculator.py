@@ -65,17 +65,18 @@ def calculate_setup_payback_months(scenario: RoiScenarioInput) -> float:
     net_monthly_gain = calculate_net_monthly_gain(scenario)
     return scenario.setup_fee / net_monthly_gain
 
+
 def calculate_roi_summary(scenario: RoiScenarioInput) -> dict:
     """Return the main calculator outputs in one summary object."""
     return {
-        "missed_calls_per_month": calculate_missed_calls_per_month(scenario),
-        "baseline_completed_jobs": calculate_baseline_completed_jobs(scenario),
-        "baseline_revenue": calculate_baseline_revenue(scenario),
-        "assisted_completed_jobs": calculate_assisted_completed_jobs(scenario),
-        "assisted_revenue": calculate_assisted_revenue(scenario),
-        "incremental_revenue": calculate_incremental_revenue(scenario),
-        "monthly_cost": calculate_monthly_cost(scenario),
-        "net_monthly_gain": calculate_net_monthly_gain(scenario),
-        "roi_multiple": calculate_roi_multiple(scenario),
-        "setup_payback_months": calculate_setup_payback_months(scenario),
+        "missed_calls_per_month": round(calculate_missed_calls_per_month(scenario), 2),
+        "baseline_completed_jobs": round(calculate_baseline_completed_jobs(scenario), 3),
+        "baseline_revenue": round(calculate_baseline_revenue(scenario), 2),
+        "assisted_completed_jobs": round(calculate_assisted_completed_jobs(scenario), 3),
+        "assisted_revenue": round(calculate_assisted_revenue(scenario), 2),
+        "incremental_revenue": round(calculate_incremental_revenue(scenario), 2),
+        "monthly_cost": round(calculate_monthly_cost(scenario), 2),
+        "net_monthly_gain": round(calculate_net_monthly_gain(scenario), 2),
+        "roi_multiple": round(calculate_roi_multiple(scenario), 2),
+        "setup_payback_months": round(calculate_setup_payback_months(scenario), 2),
     }
