@@ -55,3 +55,10 @@ def test_calculate_electrician_roi_summary():
     assert summary["net_monthly_gain"] == 154.13
     assert summary["roi_multiple"] == 1.47
     assert summary["setup_payback_months"] == 5.13
+
+def test_cli_summary_uses_loader_and_calculator():
+    scenario = load_scenario_from_json("scenarios/plumber_base.json")
+    summary = calculate_roi_summary(scenario)
+
+    assert summary["missed_calls_per_month"] == 36.0
+    assert summary["roi_multiple"] == 2.13
