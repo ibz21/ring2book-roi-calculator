@@ -75,3 +75,15 @@ def test_cli_outputs_pretty_json_for_plumber(monkeypatch, capsys):
     assert '"missed_calls_per_month": 36.0' in captured.out
     assert '"roi_multiple": 2.13' in captured.out
     assert '"setup_payback_months": 2.12' in captured.out
+
+
+def test_cli_shows_usage_when_no_argument(monkeypatch, capsys):
+    monkeypatch.setattr("sys.argv", ["cli"])
+
+    try:
+        cli_main()
+    except SystemExit as exc:
+        assert exc.code == 1
+
+    captured = capsys.readouterr()
+    assert "Usage: python -m ring2book_roi.cli <scenario_json_path>" in captured.out
