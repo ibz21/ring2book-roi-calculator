@@ -74,3 +74,5 @@ From the project root, run:
 
 ```powershell
 $env:PYTHONPATH="src"; python -m ring2book_roi.cli scenarios/plumber_base.json
+
+Core calculator, multi-scenario support, CLI runner, and automated tests are complete.
