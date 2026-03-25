@@ -76,3 +76,16 @@ From the project root, run:
 $env:PYTHONPATH="src"; python -m ring2book_roi.cli scenarios/plumber_base.json
 
 Core calculator, multi-scenario support, CLI runner, and automated tests are complete.
+
+## Run the API locally
+
+From the project root, run:
+
+```powershell
+$env:PYTHONPATH="src"; python -m uvicorn ring2book_roi.api:app --reload
+
+Then open:
+
+http://127.0.0.1:8000/health
+http://127.0.0.1:8000/scenario/plumber_base
+http://127.0.0.1:8000/docs
