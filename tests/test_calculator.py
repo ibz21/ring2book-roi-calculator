@@ -6,6 +6,8 @@ from ring2book_roi.calculator import (
 )
 from ring2book_roi.presets import load_scenario_from_json
 
+from ring2book_roi.cli import main as cli_main
+
 
 def load_scenario():
     return load_scenario_from_json("scenarios/plumber_base.json")
@@ -62,3 +64,14 @@ def test_cli_summary_uses_loader_and_calculator():
 
     assert summary["missed_calls_per_month"] == 36.0
     assert summary["roi_multiple"] == 2.13
+
+def test_cli_outputs_pretty_json_for_plumber(monkeypatch, capsys):
+    monkeypatch.setattr("sys.argv", ["cli", "scenarios/plumber_base.json"])
+
+    cli_main()
+
+    captured = capsys.readouterr()
+
+    assert '"missed_calls_per_month": 36.0' in captured.out
+    assert '"roi_multiple": 2.13' in captured.out
+    assert '"setup_payback_months": 2.12' in captured.out
