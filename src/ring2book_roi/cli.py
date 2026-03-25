@@ -1,3 +1,5 @@
+import json
+
 import sys
 
 from ring2book_roi import calculate_roi_summary, load_scenario_from_json
@@ -12,7 +14,7 @@ def main():
     scenario = load_scenario_from_json(scenario_path)
     summary = calculate_roi_summary(scenario)
 
-    print(summary)
+    print(json.dumps(summary, indent=2))
 
 
 if __name__ == "__main__":
